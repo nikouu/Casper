@@ -263,8 +263,8 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding-top: min(24px, 3.6vmin);
-    padding-bottom: min(24px, 3.6vmin);
+    padding-top: min(24px, 2vmin); /* Niko's Custom change */
+    padding-bottom: min(24px, 2vmin); /* Niko's Custom change */
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
@@ -1809,8 +1809,8 @@ iframe.instagram-media + script + :not([id]) {
 
 .site-footer {
     position: relative;
-    margin: 40px 0 0 0;
-    padding: 20px 4vmin 20px;
+    margin: 40px 0 0 0; /* Niko's Custom change */
+    padding: 20px 4vmin 20px; /* Niko's Custom change */
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
