@@ -263,7 +263,7 @@ body:not(.has-cover) .site-header-content:not(.left-aligned) {
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding-top: 1vmin 4vmin; /* Niko's Custom change */
+    padding: 1vmin 4vmin; /* Niko's Custom change */
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
