@@ -1589,7 +1589,10 @@ iframe.instagram-media + script + :not([id]) {
 
 .footer-cta {
     position: relative;
-    text-align: center;
+    padding: 5vmin 2vmin 6vmin; /* Niko's Custom change */
+    color: #fff; /* Niko's Custom change */
+    text-align: center; /* Niko's Custom change */
+    background: var(--color-darkgrey); /* Niko's Custom change */
 }
 
 .footer-cta-title {
@@ -1646,7 +1649,11 @@ iframe.instagram-media + script + :not([id]) {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    margin-top: 2.4vmin;
+    width: 100%; /* Niko's Custom change */
+    padding: 4vmin; /* Niko's Custom change */
+    margin: 0 auto -40px; /* Niko's Custom change */
+    border-bottom: 1px solid hsla(0,0%,100%,.1); /* Niko's Custom change */
+    background: #0a0b0c; /* Niko's Custom change */
 }
 
 .footer-cta + .read-more-wrap {
