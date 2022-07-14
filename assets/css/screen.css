@@ -1657,7 +1657,7 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .footer-cta + .read-more-wrap {
-    margin-top: max(12vmin, 72px);
+    /*margin-top: max(12vmin, 72px); */ /* Niko's Custom change */
 }
 
 .read-more {
