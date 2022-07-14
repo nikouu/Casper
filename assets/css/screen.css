@@ -1666,6 +1666,15 @@ iframe.instagram-media + script + :not([id]) {
     grid-gap: 4vmin;
 }
 
+.read-more .post-card-title {
+    color: #fff;
+    opacity: .8;
+}
+
+.read-more .post-card-excerpt {
+    color: hsla(0,0%,100%,.6);
+}
+
 .read-more .post-card-tags {
     display: none;
 }
