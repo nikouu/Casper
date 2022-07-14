@@ -1470,6 +1470,8 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 /* Tables */
+
+/*
 .gh-content table {
     display: inline-block;
     overflow-x: auto;
@@ -1520,6 +1522,7 @@ iframe.instagram-media + script + :not([id]) {
     border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
 }
 
+*/
 
 /* 7.1. Post Byline
 /* ---------------------------------------------------------- */
