@@ -2435,6 +2435,6 @@ video {
 /* 18. Tables
 /* ---------------------------------------------------------- */
 
-tbody > tr {
+table * {
     vertical-align: middle;
 }
