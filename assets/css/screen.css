@@ -2436,5 +2436,5 @@ video {
 /* ---------------------------------------------------------- */
 
 tbody > tr {
-    vertical-align: revert;
+    vertical-align: middle;
 }
