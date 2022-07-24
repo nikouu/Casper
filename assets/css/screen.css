@@ -2431,3 +2431,10 @@ video {
     box-shadow: 0 0 0 1px #35373a;
     border-radius: 3px;
 }
+
+/* 18. Tables
+/* ---------------------------------------------------------- */
+
+tbody > tr {
+    vertical-align: revert;
+}
