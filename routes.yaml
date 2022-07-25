@@ -3,6 +3,10 @@ routes:
     controller: channel
     filter: tag:favourite-post
     template: portfolio-list
+  /featured/:
+    controller: channel
+    filter: featured:true
+    template: portfolio-list
 
 collections:
   /blog/:
