@@ -1,6 +1,10 @@
+/* Via https://github.com/pokedextracker/pokedextracker.com */
+
 .pkicon {
+    @include crisp-rendering();
+  
     display: inline-block;
-    background-image: url('/assets/other/post/living-dex/pokesprite_v2.png');
+    background-image: url('/assets/other/post/living-dex/pokesprite.png');
     background-repeat: no-repeat;
   }
 
