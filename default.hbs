@@ -32,6 +32,19 @@
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9097562495524795" crossorigin="anonymous"></script>
     {{/if}}
 
+    {{#post}} {{! Only run this code when on a post page and open the post context }}
+        {{#has tag="pokemonspritesheet"}} {{! Only run on a post with tag pokedex }}
+        <style>
+            .pkicon {
+                display: inline-block;
+                background-image: url({{asset '/assets/other/post/living-dex/pokesprite.png'}}); 
+                background-repeat: no-repeat;
+            }
+        </style>
+        <link rel="stylesheet" href= {{asset "/assets/other/post/living-dex/pokesprite.css" }}>        
+        {{/has}}
+    {{/post}}
+
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}    
     {{ghost_head}}
