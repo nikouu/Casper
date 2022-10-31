@@ -2344,7 +2344,7 @@ video {
 /* Tables */
 .article table {  
     overflow-x: auto;
-    margin: 0.5em 0 2.5em;
+    margin: 0.5em 0 1em;
     max-width: 100%;
     width: auto;
     border-spacing: 0;
