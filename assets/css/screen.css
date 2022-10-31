@@ -1263,7 +1263,7 @@ is the very first element in the post content */
 .gh-content .kg-toggle-card .kg-toggle-content > ol,
 .gh-content .kg-toggle-card .kg-toggle-content > ul,
 .gh-content .kg-toggle-card .kg-toggle-content > p {
-    font-family: var(--font-serif);
+    /*font-family: var(--font-serif);*/
     font-weight: 400;
     font-size: 1.9rem;
     line-height: 1.6em;
