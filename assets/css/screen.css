@@ -2438,3 +2438,14 @@ video {
 table * {
     vertical-align: middle;
 }
+
+/* 19. Code
+/* ---------------------------------------------------------- */
+
+code {
+    font-family: monospace,monospace;
+    font-size: 1em;
+    background-color: #e3e6e8;
+    border-radius: 3px;
+    padding: 2px 4px;
+}
