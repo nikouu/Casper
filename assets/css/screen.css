@@ -1233,11 +1233,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: max(4.8vmin, 32px);
+    margin-top: max(4.8vmin, 20px);
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: max(4.8vmin, 32px) !important;
+    margin-top: max(4.8vmin, 20px) !important;
 }
 
 /* Now the content typography styles */
