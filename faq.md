@@ -20,3 +20,8 @@ Modify assets\css\screen.css, remember to build after
 ## How do I modify routes?
 1. Modify routes.yaml
 2. Upload routes.yaml to the admin panel > settings > labs > routes
+
+## How to update from the main repo?
+1. Create a merge resolution branch
+2. Merge origin/main into it
+3. PR into own main

@@ -14,10 +14,8 @@
  */
 
 (function (window, document) {
-    // custom switch to prevent infinite scroll when pagination controls are present
-    if (document.getElementsByClassName('pagination').length){
-        return;
-    }
+    if (document.documentElement.classList.contains('no-infinite-scroll')) return;
+
     // next link element
     var nextElement = document.querySelector('link[rel=next]');
     if (!nextElement) {
