@@ -272,7 +272,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    height: 88px;
+    height: 60px;
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
@@ -285,7 +285,6 @@ production stylesheet in assets/built/screen.css
 }
 
 :is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
-    position: absolute;
     top: 0;
     right: 0;
     left: 0;
