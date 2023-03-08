@@ -1331,7 +1331,6 @@ html.no-infinite-scroll .pagination {
 
 .pagination .older-posts {
     grid-column-start: 3;
-    text-align: right;
 }
 
 @media (max-width: 767px) {
