@@ -2800,3 +2800,27 @@ code {
     border-radius: 3px;
     padding: 2px 4px;
 }
+
+/* 20. Socials
+/* ---------------------------------------------------------- */
+/* https://ghost.org/tutorials/add-social-media-icons/*/
+
+.gh-head-menu .nav-github a,
+.gh-head-menu .nav-linkedin a {
+    font-size: 0 !important;
+}
+
+.gh-head-menu .nav-github a::before,
+.gh-head-menu .nav-linkedin a::before {
+    font-family: "Font Awesome 6 Brands";
+    display: inline-block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.gh-head-menu .nav-github a::before {content: "\f09b"}
+.gh-head-menu .nav-linkedin a::before {content: "\f08c"}
