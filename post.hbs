@@ -100,7 +100,7 @@ into the {body} tag of the default.hbs template --}}
             </div>            
         {{/if}}
         {{!-- Show console log if the post is within the last two years --}}
-        {{#if (lt (subtract (date format="YYYY") (date published_at format="YYYY")) 2)}}
+        {{#if (subtract (date format="YYYY") (date published_at format="YYYY")) < 2}}
             <script>
                 console.log('This is a newer post!');
             </script>
@@ -109,6 +109,7 @@ into the {body} tag of the default.hbs template --}}
                 console.log('This is an older post!');
             </script>
         {{/if}}
+
 
         {{content}}
         {{^if @member.paid}}
