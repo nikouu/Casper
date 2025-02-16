@@ -99,7 +99,12 @@ into the {body} tag of the default.hbs template --}}
                 <!-- End Post Ad - Top -->
             </div>            
         {{/if}}
-        <div id="oldPostWarning" style="display:none"></div>
+        <div id="oldPostWarning" style="display:none">
+            <div class="kg-card kg-callout-card kg-callout-card-yellow">
+                <div class="kg-callout-emoji">⚠</div>
+                <div class="kg-callout-text">This C#/.NET post is more than two years old. The ecosystem moves quickly and this information may be outdated.</div>
+            </div>
+        </div>
         {{content}}
         {{^if @member.paid}}
             <div class="adsense">
