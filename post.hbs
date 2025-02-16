@@ -98,7 +98,21 @@ into the {body} tag of the default.hbs template --}}
                 </script>
                 <!-- End Post Ad - Top -->
             </div>            
-        {{/if}}    
+        {{/if}}
+        {{!-- Calculate the year difference between published_at and current date --}}
+        {{#let (subtract (date format="YYYY") (date published_at format="YYYY")) as |yearDiff|}}
+            {{!-- Show content if the post is within the last two years --}}
+            {{#if (lt yearDiff 2)}}
+                <script>
+                    console.log("newer post");
+                </script>
+            {{else}}
+                <script>
+                    console.log("older post");
+                </script>
+            {{/if}}
+        {{/let}}
+
         {{content}}
         {{^if @member.paid}}
             <div class="adsense">
