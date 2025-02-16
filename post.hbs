@@ -99,18 +99,7 @@ into the {body} tag of the default.hbs template --}}
                 <!-- End Post Ad - Top -->
             </div>            
         {{/if}}
-        {{!-- Show console log if the post is within the last two years --}}
-        {{#if (subtract (date format="YYYY") (date published_at format="YYYY")) < 2}}
-            <script>
-                console.log('This is a newer post!');
-            </script>
-        {{else}}
-            <script>
-                console.log('This is an older post!');
-            </script>
-        {{/if}}
-
-
+        <div id="oldPostWarning" style="display:none"></div>
         {{content}}
         {{^if @member.paid}}
             <div class="adsense">
@@ -194,3 +183,14 @@ into the {body} tag of the default.hbs template --}}
 {{/if}}
 
 {{/post}}
+
+<script>
+    const postDate = new Date('{{date format="YYYY-MM-DD"}}');
+    const currentDate = new Date();
+    const yearDifference = currentDate.getFullYear() - postDate.getFullYear();
+    if (yearDifference > 2) {
+        console.log('This post is over 2 years old');
+    }
+
+    console.log('{{tags}}');
+</script>
