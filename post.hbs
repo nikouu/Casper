@@ -198,7 +198,7 @@ into the {body} tag of the default.hbs template --}}
     if (yearDifference > 2 && containsCSharpOrDotNet) {
         const oldPostWarning = document.getElementById('oldPostWarning');
         const calloutText = oldPostWarning.querySelector('.kg-callout-text');
-        calloutText.textContent = `This post is over two years old and relies on or has information about C#/.NET. The .NET information may be outdated as the ecosystem moves quickly.`;
+        calloutText.textContent = `This post is over two years old and relies on or has information about C#/.NET. The .NET information may be outdated.`;
         oldPostWarning.style.display = 'block';
     }
 
