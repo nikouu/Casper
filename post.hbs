@@ -101,8 +101,8 @@ into the {body} tag of the default.hbs template --}}
         {{/if}}
         <div id="oldPostWarning" style="display:none">
             <div class="kg-card kg-callout-card kg-callout-card-yellow">
-                <div class="kg-callout-emoji">⚠</div>
-                <div class="kg-callout-text">This C#/.NET post is more than two years old. The ecosystem moves quickly and this information may be outdated.</div>
+                <div class="kg-callout-emoji">⚠️</div>
+                <div class="kg-callout-text"></div>
             </div>
         </div>
         {{content}}
@@ -196,10 +196,12 @@ into the {body} tag of the default.hbs template --}}
     const containsCSharpOrDotNet = tags.some(item => item.trim() === "C#" || item.trim() === ".NET");
 
     if (yearDifference > 2 && containsCSharpOrDotNet) {
-        console.log('Post needs a warning.');
+        const oldPostWarning = document.getElementById('oldPostWarning');
+        const calloutText = oldPostWarning.querySelector('.kg-callout-text');
+        calloutText.textContent = `This C#/.NET post is more than two years old. The ecosystem moves quickly and this information may be outdated.`;
+        oldPostWarning.style.display = 'block';
     }
 
-    console.log('{{tags autolink="false"}}');
 </script>
 
 {{/post}}
