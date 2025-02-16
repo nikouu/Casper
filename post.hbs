@@ -186,6 +186,16 @@ into the {body} tag of the default.hbs template --}}
     const postDate = new Date('{{date published_at format="YYYY-MM-DD"}}');
     const currentDate = new Date();
     const yearDifference = currentDate.getFullYear() - postDate.getFullYear();
+    const tags = '{{tags autolink="false"}}'.split(',');
+
+    const containsCSharpOrDotNet = stringArray.some(item => item.trim() === "C#" || item.trim() === ".NET");
+
+    if (containsCSharpOrDotNet) {
+        console.log("The array contains either C# or .NET.");
+    } else {
+        console.log("The array does not contain C# or .NET.");
+    }
+
     if (yearDifference > 2) {
         console.log('This post is over 2 years old');
     }
