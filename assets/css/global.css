@@ -409,6 +409,7 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
+    font-family: var(--gh-font-heading, var(--font-sans));
     font-weight: 600;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;
