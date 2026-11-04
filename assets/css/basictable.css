@@ -25,7 +25,7 @@
  }
 
  table.bt tbody tr {
-    border: color-mod(#e5eff5 l(-1%) s(-5%)) 1px solid;
+    border: #e2ecf3 1px solid;
  }
  
  table.bt tfoot th::before,
