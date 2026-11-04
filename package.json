@@ -129,16 +129,6 @@
                 "default": "Center aligned",
                 "group": "homepage"
             },
-            "feed_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Grid",
-                    "List"
-                ],
-                "default": "Classic",
-                "group": "homepage"
-            },
             "color_scheme": {
                 "type": "select",
                 "options": [
