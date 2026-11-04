@@ -1067,7 +1067,7 @@ production stylesheet in assets/built/screen.css
 
 .post-card-excerpt {
     max-width: 56em;
-    color: color-mod(var(--color-midgrey) l(-8%));
+    color: #60757e;
 }
 
 .post-card-excerpt p {
@@ -2738,7 +2738,7 @@ video {
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background-color: color-mod(var(--color-wash) l(+4%));
+    background-color: #f4f8fb;
 
     position: sticky;
     top: 0;
@@ -2748,7 +2748,7 @@ video {
 .article table th,
 .article table td {
     padding: 6px 12px;
-    border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
+    border: #e2ecf3 1px solid;
 }
 
 /* 16. Lightbox
