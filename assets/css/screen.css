@@ -772,11 +772,6 @@ html.gh-navigation-open {
         height: 64px;
     }
 
-    /* Do not need, as am not hiding the branding on the home screen */
-    /* .home-template #gh-head .gh-head-brand {
-        justify-content: flex-end;
-    } */
-
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
@@ -904,36 +899,11 @@ html.gh-navigation-open {
 }
 
 
-/*
-.home-template .gh-head {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 2000;
-}
-
- .home-template .gh-head.has-cover {
-    background: transparent;
-}
-
-.home-template.gh-head-open .gh-head {
-    background: var(--ghost-accent-color);
-}
-
-.home-template .gh-head-logo {
-    display: none;
-}
-.home-template .gh-head-menu {
-    margin-left: -2.5vmin;
-} */
-
 .has-cover.gh-head-open .gh-head {
     background: var(--ghost-accent-color);
 }
 
 
-/* 6. Post Feed
 /* 5. Post Feed
 /* ---------------------------------------------------------- */
 
@@ -1182,69 +1152,6 @@ html.gh-navigation-open {
     margin: 0;
     padding: 0;
 }
-/* 
-.static-avatar {
-    display: block;
-    overflow: hidden;
-    margin: 0 0 0 -6px;
-    width: 36px;
-    height: 36px;
-    border-radius: 100%;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.2);
-}
-
-.post-card-byline-content {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    color: color-mod(var(--color-midgrey) l(+10%));
-    font-size: 1.4rem;
-    line-height: 1.2em;
-    font-weight: 400;
-}
-
-.post-card-byline-content span {
-    margin: 0;
-}
-
-.post-card-byline-content a {
-    color: color-mod(var(--color-darkgrey) l(+15%));
-    font-weight: 600;
-}
-
-.post-card-byline-date {
-    font-size: 1.3rem;
-    line-height: 1.5em;
-}
-
-.post-card-byline-date .bull {
-    display: inline-block;
-    margin: 0 2px;
-    opacity: 0.6;
-}
-
-.single-author-byline {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5px;
-    color: color-mod(var(--color-midgrey) l(-10%));
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 500;
-}
-
-.single-author {
-    display: flex;
-    align-items: center;
-}
-
-.single-author .static-avatar {
-    margin-left: -2px;
-}
-
-.single-author-name {
-    display: inline-block;
-} */
 
 /* Special Styling for home page grid (below):
 
@@ -1469,7 +1376,6 @@ use it for applying any other styles. */
             [wide-start]
             minmax(auto, 240px)
                 [main-start]
-                    /* min(800px, calc(100% - 8vw)) */
                     min(720px, calc(100% - max(8vmin, 40px)))
                 [main-end]
             minmax(auto, 240px)
@@ -3361,23 +3267,6 @@ video {
 
 .article table {
     -webkit-overflow-scrolling: touch;
-    /* background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
-    background-attachment: scroll, scroll;
-    background-size: 10px 100%, 10px 100%;
-    background-repeat: no-repeat; */
-}
-
-.article table td:first-child {
-   /*  background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-size: 20px 100%;
-    background-repeat: no-repeat; */
-}
-
-.article table td:last-child {
-   /*  background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
-    background-position: 100% 0;
-    background-size: 20px 100%;
-    background-repeat: no-repeat; */
 }
 
 .article table thead {
