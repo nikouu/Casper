@@ -3445,3 +3445,9 @@ code {
 
 .gh-head-menu .nav-github a::before {content: "\f09b"}
 .gh-head-menu .nav-linkedin a::before {content: "\f08c"}
+
+/* Ghost renders this block even with no social accounts set, and its
+flex gap then pushes the footer menu out of line */
+.site-footer-social-links:not(:has(a)) {
+    display: none;
+}
