@@ -3541,15 +3541,12 @@ flex gap then pushes the footer menu out of line */
 /* 26. Code blocks
 /* ---------------------------------------------------------- */
 
-/* Prism's Coy theme draws its frame on the code element. Upstream's
-".gh-content pre" comes after prism.css and adds a dark frame around it,
-so undo that frame on highlighted blocks. The zero bottom margin keeps the
-gap below a code block the same as the 32px gap above it */
-.gh-content pre[class*=language-] {
-    overflow: visible;
+/* Upstream's code block frame with the light colors of the Prism theme in
+prism.css, for all code blocks with or without a language. Change the two
+colors when the theme changes. This rule also removes Prism's bottom margin,
+so the gap below a code block is the same 32px as above it */
+.gh-content pre {
     margin-bottom: 0;
-    padding: 1px;
-    background: #fdfdfd;
-    border-radius: 0;
-    box-shadow: none;
+    color: #5e6687;
+    background: #f5f7ff;
 }

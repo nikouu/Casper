@@ -27,4 +27,7 @@
             video.closest(".kg-video-card").style.setProperty("--video-ratio", width / height);
         }
     });
+
+    // Unlabeled code blocks get Prism's plain-text class, so the theme styles them like the others
+    document.querySelectorAll("pre > code:not([class*='language-'])").forEach(code => code.classList.add("language-none"));
 })();
