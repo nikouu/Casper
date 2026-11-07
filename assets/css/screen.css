@@ -72,6 +72,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .viewport {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -1261,20 +1262,19 @@ html.no-infinite-scroll .pagination {
 /* ---------------------------------------------------------- */
 
 .article {
-    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
     word-break: break-word;
 }
 
-.page-template .article {
-    padding-top: max(12vmin, 64px);
+.post-template .article {
+    padding: max(8vmin, 40px) 0 max(8vmin, 64px);
 }
 
-.article-header {
-    padding: 0 0 max(6.4vmin, 40px) 0;
+.post-template .article-header {
+    padding: 0 0 max(6.4vmin, 40px);
 }
 
 .page-template .article-header {
-    padding-bottom: max(3.2vmin, 28px);
+    padding: max(12vmin, 64px) 0 max(3.2vmin, 28px);
 }
 
 .article-tag {
@@ -1307,7 +1307,7 @@ html.no-infinite-scroll .pagination {
 }
 
 .gh-canvas .article-image {
-    grid-column: main-start / main-end;
+    grid-column: wide-start / wide-end;
     width: 100%;
     margin: max(6.4vmin, 40px) 0 0;
 }
@@ -1343,28 +1343,28 @@ html.no-infinite-scroll .pagination {
 is laid out on top of. Canvas just defines the grid, we don't
 use it for applying any other styles. */
 
-.gh-canvas {
+.gh-canvas,
+.kg-width-full.kg-content-wide {
+    --gap: max(4vmin, 20px);
+    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+
     display: grid;
     grid-template-columns:
-        [full-start]
-        minmax(max(4vmin, 20px), auto)
-            [wide-start]
-            minmax(auto, 240px)
-                [main-start]
-                    min(720px, calc(100% - max(8vmin, 40px)))
-                [main-end]
-            minmax(auto, 240px)
-            [wide-end]
-        minmax(max(4vmin, 20px), auto)
-        [full-end]
-    ;
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [main-start] var(--main) [main-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
 }
 
 .gh-canvas > * {
     grid-column: main-start / main-end;
 }
 
-.kg-width-wide {
+.kg-width-wide,
+.kg-content-wide > div {
     grid-column: wide-start / wide-end;
 }
 
@@ -1388,6 +1388,11 @@ headings, text, images and lists. We deal with cards lower down. */
 .gh-content > * + * {
     margin-top: max(3.2vmin, 24px);
     margin-bottom: 0;
+}
+
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+    margin-top: 0;
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
@@ -1440,6 +1445,18 @@ is the very first element in the post content */
     line-height: 1.6em;
     letter-spacing: -0.01em;
     margin-top: 1.2em;
+}
+
+.gh-content > p img {
+  margin: 0 auto;
+}
+
+.page-template .gh-content:only-child > *:first-child:not(.kg-width-full) {
+    margin-top: max(12vmin, 64px);
+}
+
+.page-template .gh-content > *:last-child:not(.kg-width-full) {
+    margin-bottom: max(12vmin, 64px);
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
@@ -2139,6 +2156,10 @@ html.dark-mode .gh-button-share:hover {
     padding: 20px 4vmin 20px; /* Niko's Custom change */
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
+}
+
+.page-template .site-footer {
+    margin-top: 0;
 }
 
 .site-footer .inner {
@@ -3178,6 +3199,12 @@ the right place. Onward!
 /* 13. Custom Hero
 /* ---------------------------------------------------------- */
 
+/* The hero image is absolutely positioned. A positioned .viewport would
+stretch it over the whole page, so keep .viewport static */
+.viewport {
+    position: static;
+}
+
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -3379,4 +3406,12 @@ flex gap then pushes the footer menu out of line */
         font-size: 3.6rem;
         line-height: 1.1em;
     }
+}
+
+/* 22. Page layout
+/* ---------------------------------------------------------- */
+
+/* Feature images as wide as the text, unless the post image style is Full or Small */
+.article:not(.image-full):not(.image-small) .article-image {
+    grid-column: main-start / main-end;
 }
