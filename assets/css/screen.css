@@ -3204,6 +3204,7 @@ so they must stay at the end of the file.
 23. Post lists
 24. End of post
 25. Footer
+26. Code blocks
 
 */
 
@@ -3535,4 +3536,20 @@ margin. Change the two values together */
 flex gap then pushes the footer menu out of line */
 .site-footer-social-links:not(:has(a)) {
     display: none;
+}
+
+/* 26. Code blocks
+/* ---------------------------------------------------------- */
+
+/* Prism's Coy theme draws its frame on the code element. Upstream's
+".gh-content pre" comes after prism.css and adds a dark frame around it,
+so undo that frame on highlighted blocks. The zero bottom margin keeps the
+gap below a code block the same as the 32px gap above it */
+.gh-content pre[class*=language-] {
+    overflow: visible;
+    margin-bottom: 0;
+    padding: 1px;
+    background: #fdfdfd;
+    border-radius: 0;
+    box-shadow: none;
 }
