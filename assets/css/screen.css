@@ -3583,12 +3583,9 @@ sit in this row */
 .support-buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 12px;
-}
-
-.footer-cta .support-buttons {
-    justify-content: center;
 }
 
 /* The same shape as the Ko-fi button. This selector is as strong as
