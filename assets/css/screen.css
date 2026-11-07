@@ -3251,8 +3251,12 @@ stretch it over the whole page, so keep .viewport static */
 /* 15. Video
 /* ---------------------------------------------------------- */
 
-video {
-    width:100%;
+/* custom.js sets --video-ratio (width / height) on each video card, so tall
+videos shrink to 80% of the screen height. Ghost sizes the video box from
+the card width, so the box shrinks with the card */
+.gh-content > .kg-video-card {
+    width: min(100%, calc(80vh * var(--video-ratio, 100)));
+    justify-self: center;
 }
 
 /* 17. Ads
@@ -3266,11 +3270,7 @@ video {
 /* 18. Image
 /* ---------------------------------------------------------- */
 
-.gh-content .kg-image-card img {
-    box-shadow: 0 0 0 1px #35373a;
-    border-radius: 3px; 
-}
-
+.gh-content .kg-image-card img,
 .gh-content .kg-gallery-card img {
     box-shadow: 0 0 0 1px #35373a;
     border-radius: 3px;

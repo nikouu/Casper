@@ -18,4 +18,13 @@
     Array.from(document.querySelectorAll("a")).filter(a => {
         return a.hostname && a.hostname !== location.hostname
     }).forEach(a => a.setAttribute('target', '_blank'))
+
+    // screen.css section 15 uses --video-ratio to fit tall videos to the screen
+    document.querySelectorAll(".kg-video-card video").forEach(video => {
+        const width = Number(video.getAttribute("width"));
+        const height = Number(video.getAttribute("height"));
+        if (width && height) {
+            video.closest(".kg-video-card").style.setProperty("--video-ratio", width / height);
+        }
+    });
 })();
