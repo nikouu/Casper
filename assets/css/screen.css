@@ -278,7 +278,7 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    height: 65px;
+    height: 88px;
     font-size: 1.6rem;
     line-height: 1.3em;
     background-color: #fff;
@@ -291,14 +291,13 @@ production stylesheet in assets/built/screen.css
 }
 
 :is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
     z-index: 2000;
     background-color: transparent;
     color: #fff;
-    background: var(--ghost-accent-color);
-    z-index: 2000;
 }
 
 .gh-head a {
@@ -454,7 +453,6 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-head-menu .nav {
-    color: var(--color-wash);
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
@@ -462,11 +460,6 @@ production stylesheet in assets/built/screen.css
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.gh-head-menu .nav .nav-current a{
-    color: #fff;
-    opacity: 1;
 }
 
 .nav a {
@@ -771,18 +764,6 @@ html.gh-navigation-open {
         height: 64px;
     }
 
-    #gh-head .gh-head-menu {
-        align-self: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 0 0 10vh 0;
-        font-weight: 300;
-        font-size: 3.6rem;
-        line-height: 1.1em;
-    }
-
     #gh-head .gh-head-logo {
         font-size: 2.2rem;
     }
@@ -895,11 +876,6 @@ html.gh-navigation-open {
     .gh-head-open #gh-head .gh-head-link {
         transition-delay: 0.4s;
     }
-}
-
-
-.has-cover.gh-head-open .gh-head {
-    background: var(--ghost-accent-color);
 }
 
 
@@ -2292,7 +2268,7 @@ html.dark-mode figcaption a {
     color: #fff;
 }
 
-html.dark-mode .gh-head {
+html.dark-mode body:not(.has-cover) .gh-head {
     background: var(--color-darkmode);
     color: #fff;
 }
@@ -2466,8 +2442,9 @@ html.dark-mode .footer-cta-title {
 }
 
 @media (max-width: 767px) {
-    html.dark-mode .gh-head-open #gh-head .gh-head-actions {
-        background-color: var(--color-darkmode);
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head,
+    html.dark-mode .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
+        background: var(--color-darkmode);
     }
 }
 
@@ -2496,7 +2473,7 @@ html.dark-mode .footer-cta-title {
         color: #fff;
     }
 
-    html.auto-color .gh-head {
+    html.auto-color body:not(.has-cover) .gh-head {
         background: var(--color-darkmode);
         color: #fff;
     }
@@ -2679,8 +2656,9 @@ html.dark-mode .footer-cta-title {
     }
 
     @media (max-width: 767px) {
-        html.auto-color .gh-head-open #gh-head .gh-head-actions {
-            background-color: var(--color-darkmode);
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head,
+        html.auto-color .gh-head-open:not(.has-cover) #gh-head .gh-head-actions {
+            background: var(--color-darkmode);
         }
     }
 }
@@ -3361,4 +3339,44 @@ code {
 flex gap then pushes the footer menu out of line */
 .site-footer-social-links:not(:has(a)) {
     display: none;
+}
+
+/* 21. Header and menu
+/* ---------------------------------------------------------- */
+
+.gh-head {
+    height: 65px;
+}
+
+/* Sit above the home hero instead of floating over the cover image */
+:is(.home-template, .paged:not(.tag-template):not(.author-template)).has-cover .gh-head {
+    position: static;
+    background: var(--ghost-accent-color);
+}
+
+.has-cover.gh-head-open .gh-head {
+    background: var(--ghost-accent-color);
+}
+
+.gh-head-menu .nav {
+    color: var(--color-wash);
+}
+
+/* Less specific than upstream's ".gh-head-menu .nav a:hover", so hover still dims it */
+.gh-head-menu .nav-current a {
+    color: #fff;
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    #gh-head .gh-head-menu {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-weight: 300;
+        font-size: 3.6rem;
+        line-height: 1.1em;
+    }
 }
