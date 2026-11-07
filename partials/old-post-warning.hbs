@@ -1,0 +1,18 @@
+{{#has tag="C#,.NET"}}
+    <div id="oldPostWarning" hidden>
+        <div class="kg-card kg-callout-card kg-callout-card-yellow">
+            <div class="kg-callout-emoji">⚠️</div>
+            <div class="kg-callout-text">This post is over two years old. It relies on or has information about C#/.NET that may be outdated.</div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            const published = new Date("{{date published_at format="YYYY-MM-DD"}}");
+            const twoYearsAgo = new Date();
+            twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+            if (published < twoYearsAgo) {
+                document.getElementById("oldPostWarning").hidden = false;
+            }
+        })();
+    </script>
+{{/has}}

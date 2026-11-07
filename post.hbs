@@ -87,46 +87,10 @@ into the {body} tag of the default.hbs template --}}
     </header>
 
     <section class="gh-content gh-canvas">
-        {{^if @member.paid}}
-            <div class="adsense">
-                <!-- Post Ad - Top -->     
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-9097562495524795"
-                    data-ad-slot="4764185050"
-                    data-ad-format="horizontal"
-                    data-full-width-responsive="true">
-                </ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <!-- End Post Ad - Top -->
-            </div>            
-        {{/if}}
-        <div id="oldPostWarning" style="display:none">
-            <div class="kg-card kg-callout-card kg-callout-card-yellow">
-                <div class="kg-callout-emoji">⚠️</div>
-                <div class="kg-callout-text"></div>
-            </div>
-        </div>
+        {{> "adsense" slot="4764185050"}}
+        {{> "old-post-warning"}}
         {{content}}
-        {{^if @member.paid}}
-            <div class="adsense">
-                <!-- Post Ad - Bottom -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-9097562495524795"
-                    data-ad-slot="6490709006"
-                    data-ad-format="horizontal"
-                    data-full-width-responsive="true">
-                </ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <!-- End Post Ad - Bottom -->        
-            </div>            
-        {{/if}}        
-
+        {{> "adsense" slot="6490709006"}}
     </section>
 
     {{#if comments}}
@@ -180,22 +144,5 @@ into the {body} tag of the default.hbs template --}}
 
     {{/get}}
 {{/if}}
-
-<script>
-    const postDate = new Date('{{date published_at format="YYYY-MM-DD"}}');
-    const currentDate = new Date();
-    const yearDifference = currentDate.getFullYear() - postDate.getFullYear();
-    const tags = '{{tags autolink="false"}}'.split(',');
-
-    const containsCSharpOrDotNet = tags.some(item => item.trim() === "C#" || item.trim() === ".NET");
-
-    if (yearDifference > 2 && containsCSharpOrDotNet) {
-        const oldPostWarning = document.getElementById('oldPostWarning');
-        const calloutText = oldPostWarning.querySelector('.kg-callout-text');
-        calloutText.textContent = `This post is over two years old. It relies on or has information about C#/.NET that may be outdated.`;
-        oldPostWarning.style.display = 'block';
-    }
-
-</script>
 
 {{/post}}
