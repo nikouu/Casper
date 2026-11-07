@@ -3308,19 +3308,22 @@ video {
 /* ---------------------------------------------------------- */
 
 /* Wrap cell text between words only, so a table scrolls instead of splitting
-words. fit-content shrinks the box to the table, so upstream's scroll
-shadows only show when a table actually scrolls */
+words */
 .gh-content table:not(.gist table) {
-    width: fit-content;
     font-family: inherit;
     white-space: normal;
     word-break: normal;
 }
 
+/* Centering also shrinks each table to its content, so upstream's scroll
+shadows only show when a table scrolls */
+.gh-content > table:not(.gist table) {
+    justify-self: center;
+}
+
 /* Tables with six or more columns use the wide column, like wide images */
 .gh-content > table:not(.gist table):has(tr > :nth-child(6)) {
     grid-column: wide-start / wide-end;
-    justify-self: center;
 }
 
 table * {
