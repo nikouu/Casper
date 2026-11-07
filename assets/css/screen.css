@@ -1048,12 +1048,6 @@ html.gh-navigation-open {
 }
 
 .post-card-excerpt {
-    max-width: 56em;
-    color: #60757e;
-}
-
-.post-card-excerpt p {
-    margin-bottom: 0.5em;
     display: -webkit-box;
     overflow-y: hidden;
     margin-top: 12px;
@@ -1075,6 +1069,11 @@ html.gh-navigation-open {
 
 :is(.tag-template, .author-template) .post-card-excerpt {
     margin-top: 6px;
+}
+
+:is(.tag-template, .author-template) .post-card-large .post-card-excerpt {
+    display: block;
+    overflow-y: auto;
 }
 
 .post-card-meta {
@@ -1249,6 +1248,7 @@ html.no-infinite-scroll .pagination {
 
 .pagination .older-posts {
     grid-column-start: 3;
+    text-align: right;
 }
 
 @media (max-width: 767px) {
@@ -1408,7 +1408,7 @@ headings, text, images and lists. We deal with cards lower down. */
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
-    margin: 1.6em 0 0;
+    margin: 2em 0 0;
 }
 
 /* Add a small margin between a heading and anything after it */
@@ -1420,11 +1420,11 @@ is the very first element in the post content */
 .gh-content > hr,
 .gh-content > blockquote {
     position: relative;
-    margin-top: max(2vmin, 20px);
+    margin-top: max(4.8vmin, 32px);
 }
 .gh-content > hr + *,
 .gh-content > blockquote + * {
-    margin-top: max(2vmin, 20px) !important;
+    margin-top: max(4.8vmin, 32px) !important;
 }
 
 /* Now the content typography styles */
@@ -1439,12 +1439,10 @@ is the very first element in the post content */
 .gh-content > ul,
 .gh-content > dl,
 .gh-content > p {
-    font-family: var(--gh-font-body, var(--font-sans));
+    font-family: var(--gh-font-body, var(--font-serif));
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1.6em;
-    letter-spacing: -0.01em;
-    margin-top: 1.2em;
 }
 
 .gh-content > p img {
@@ -1463,9 +1461,9 @@ is the very first element in the post content */
 .gh-content .kg-toggle-card .kg-toggle-content > ol,
 .gh-content .kg-toggle-card .kg-toggle-content > ul,
 .gh-content .kg-toggle-card .kg-toggle-content > p {
-    /*font-family: var(--font-serif);*/
+    font-family: var(--font-serif);
     font-weight: 400;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 1.6em;
 }
 
@@ -1534,7 +1532,7 @@ is the very first element in the post content */
     .gh-content .kg-toggle-card .kg-toggle-content > ol,
     .gh-content .kg-toggle-card .kg-toggle-content > ul,
     .gh-content .kg-toggle-card .kg-toggle-content > p {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     .gh-content .kg-product-card .kg-product-card-description > p,
@@ -1560,12 +1558,10 @@ make sure they look good, and are given a bit of extra spacing. */
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
-    margin-top: 32px;
-    margin-bottom: 0;
+    margin-top: 6vmin;
 }
 .gh-content .kg-card + :not(.kg-card) {
-    margin-top: 32px;
-    margin-bottom: 0;
+    margin-top: 6vmin;
 }
 
 /* This keeps small embeds centered */
@@ -1649,14 +1645,14 @@ figcaption a {
 
 /* Highly specific styles for traditional Instagram embeds */
 iframe.instagram-media {
-    margin-top: 5vmin !important;
+    margin-top: 6vmin !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-bottom: 0 !important;
 }
 
 iframe.instagram-media + script + :not([id]) {
-    margin-top: 5vmin;
+    margin-top: 6vmin;
 }
 
 
@@ -3251,6 +3247,10 @@ stretch it over the whole page, so keep .viewport static */
     padding: 0 4vmin;
 }
 
+.pagination .older-posts {
+    text-align: center;
+}
+
 /* 15. Video
 /* ---------------------------------------------------------- */
 
@@ -3414,4 +3414,74 @@ flex gap then pushes the footer menu out of line */
 /* Feature images as wide as the text, unless the post image style is Full or Small */
 .article:not(.image-full):not(.image-small) .article-image {
     grid-column: main-start / main-end;
+}
+
+/* 23. Post text and spacing
+/* ---------------------------------------------------------- */
+
+.gh-content > blockquote:not([class]),
+.gh-content > ol,
+.gh-content > ul,
+.gh-content > dl,
+.gh-content > p {
+    font-family: var(--gh-font-body, var(--font-sans));
+    font-size: 1.8rem;
+    letter-spacing: -0.01em;
+    margin-top: 1.2em;
+}
+
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > ol,
+.gh-content .kg-toggle-card .kg-toggle-content > ul,
+.gh-content .kg-toggle-card .kg-toggle-content > p {
+    font-family: inherit;
+    font-size: 1.7rem;
+}
+
+@media (max-width: 650px) {
+    .gh-content > blockquote:not([class]),
+    .gh-content > ol,
+    .gh-content > ul,
+    .gh-content > dl,
+    .gh-content > p,
+    .gh-content .kg-callout-card .kg-callout-text,
+    .gh-content .kg-toggle-card .kg-toggle-content > ol,
+    .gh-content .kg-toggle-card .kg-toggle-content > ul,
+    .gh-content .kg-toggle-card .kg-toggle-content > p {
+        font-size: 1.7rem;
+    }
+}
+
+.gh-content > [id]:not(:first-child) {
+    margin: 1.6em 0 0;
+}
+
+.gh-content > hr,
+.gh-content > blockquote {
+    margin-top: 32px;
+}
+
+.gh-content > hr + *,
+.gh-content > blockquote + * {
+    margin-top: 32px !important;
+}
+
+/* Keep these after the heading rule: a heading that follows a card gets the card gap */
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+
+/* 24. Post lists
+/* ---------------------------------------------------------- */
+
+/* Show the whole excerpt instead of upstream's two or three lines */
+.post-card-excerpt {
+    display: block;
+    color: #60757e;
 }
