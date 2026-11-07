@@ -21,12 +21,6 @@ production stylesheet in assets/built/screen.css
 11. Dark Mode
 12. Lightbox
 
-13. Custom Hero
-14. Pagination
-15. Video
-17. Ads
-
-
 */
 
 /* 1. Global - Set up the things
@@ -1126,6 +1120,7 @@ html.gh-navigation-open {
     margin: 0;
     padding: 0;
 }
+
 
 /* Special Styling for home page grid (below):
 
@@ -3190,6 +3185,28 @@ the right place. Onward!
 
  */
 
+/* nikouusitalo.com
+/* ------------------------------------------------------------
+
+These sections override upstream rules with the same selectors,
+so they must stay at the end of the file.
+
+13. Custom Hero
+14. Pagination
+15. Video
+16. Ads
+17. Image
+18. Tables
+19. Menu icons
+20. Header and menu
+21. Page layout
+22. Post text and spacing
+23. Post lists
+24. End of post
+25. Footer
+
+*/
+
 /* 13. Custom Hero
 /* ---------------------------------------------------------- */
 
@@ -3210,14 +3227,8 @@ stretch it over the whole page, so keep .viewport static */
 .hero-content .hero-text {
     z-index: 1;
     padding: 18vmin 4vmin;
-    background: 
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0)      
-    );
-    width:100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    width: 100%;
     color: #fff;
     text-shadow: 0 1px 0 black;
 }
@@ -3231,7 +3242,7 @@ stretch it over the whole page, so keep .viewport static */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter:brightness(0.9)
+    filter: brightness(0.9);
 }
 
 /* 14. Pagination
@@ -3260,7 +3271,7 @@ the card width, so the box shrinks with the card */
     justify-self: center;
 }
 
-/* 17. Ads
+/* 16. Ads
 /* ---------------------------------------------------------- */
 
 .adsense {
@@ -3268,7 +3279,7 @@ the card width, so the box shrinks with the card */
     padding-bottom: 10px;
 }
 
-/* 18. Image
+/* 17. Image
 /* ---------------------------------------------------------- */
 
 .gh-content .kg-image-card img,
@@ -3303,10 +3314,10 @@ table * {
     vertical-align: middle;
 }
 
-/* 20. Socials
+/* 19. Menu icons
 /* ---------------------------------------------------------- */
-/* https://ghost.org/tutorials/add-social-media-icons/*/
 
+/* Based on https://ghost.org/tutorials/add-social-media-icons/ */
 .gh-head-menu .nav-github a,
 .gh-head-menu .nav-linkedin a {
     font-size: 0 !important;
@@ -3324,10 +3335,15 @@ table * {
     -webkit-font-smoothing: antialiased;
 }
 
-.gh-head-menu .nav-github a::before {content: "\f09b"}
-.gh-head-menu .nav-linkedin a::before {content: "\f08c"}
+.gh-head-menu .nav-github a::before {
+    content: "\f09b";
+}
 
-/* 21. Header and menu
+.gh-head-menu .nav-linkedin a::before {
+    content: "\f08c";
+}
+
+/* 20. Header and menu
 /* ---------------------------------------------------------- */
 
 .gh-head {
@@ -3367,7 +3383,7 @@ table * {
     }
 }
 
-/* 22. Page layout
+/* 21. Page layout
 /* ---------------------------------------------------------- */
 
 /* Feature images as wide as the text, unless the post image style is Full or Small */
@@ -3375,7 +3391,7 @@ table * {
     grid-column: main-start / main-end;
 }
 
-/* 23. Post text and spacing
+/* 22. Post text and spacing
 /* ---------------------------------------------------------- */
 
 .gh-content > blockquote:not([class]),
@@ -3445,7 +3461,7 @@ table * {
     margin-top: 32px;
 }
 
-/* 24. Post lists
+/* 23. Post lists
 /* ---------------------------------------------------------- */
 
 /* Show the whole excerpt instead of upstream's two or three lines */
@@ -3454,7 +3470,7 @@ table * {
     color: #60757e;
 }
 
-/* 25. End of post
+/* 24. End of post
 /* ---------------------------------------------------------- */
 
 .footer-cta {
@@ -3504,10 +3520,10 @@ read-more band touches the footer */
     color: hsla(0, 0%, 100%, 0.6);
 }
 
-/* 26. Footer
+/* 25. Footer
 /* ---------------------------------------------------------- */
 
-/* The read-more band's -40px bottom margin (section 25) cancels this top
+/* The read-more band's -40px bottom margin (section 24) cancels this top
 margin. Change the two values together */
 .site-footer {
     margin-top: 40px;
