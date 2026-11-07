@@ -3496,6 +3496,12 @@ flex gap then pushes the footer menu out of line */
     margin-bottom: 0;
 }
 
+/* Prism's "margin: .5em 0" outranks the block gap, so give code blocks the card gap */
+.gh-content > * + pre,
+.gh-content > pre + * {
+    margin-top: 32px;
+}
+
 /* 24. Post lists
 /* ---------------------------------------------------------- */
 
