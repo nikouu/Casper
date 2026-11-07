@@ -3541,12 +3541,15 @@ flex gap then pushes the footer menu out of line */
 /* 26. Code blocks
 /* ---------------------------------------------------------- */
 
-/* Upstream's code block frame with the light colors of the Prism theme in
-prism.css, for all code blocks with or without a language. Change the two
-colors when the theme changes. This rule also removes Prism's bottom margin,
-so the gap below a code block is the same 32px as above it */
+/* All code blocks, with or without a language, get the light colors of the
+Prism theme in prism.css. Change the two colors when the theme changes. The
+theme's border replaces upstream's shadow, and the corners match the 3px of
+images. This rule also removes Prism's bottom margin, so the gap below a
+code block is the same 32px as above it */
 .gh-content pre {
     margin-bottom: 0;
     color: #393a34;
     background: #fff;
+    border-radius: 3px;
+    box-shadow: none;
 }
