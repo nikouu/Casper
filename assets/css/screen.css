@@ -3428,6 +3428,14 @@ table * {
     }
 }
 
+/* Upstream shrinks H3 to the text size on phones. 20px keeps the same step
+from H3 to H2 as on desktop */
+@media (max-width: 600px) {
+    .gh-content h3 {
+        font-size: 2rem;
+    }
+}
+
 .gh-content > [id]:not(:first-child) {
     margin: 1.6em 0 0;
 }
