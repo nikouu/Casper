@@ -144,18 +144,8 @@ into the {body} tag of the default.hbs template --}}
 {{#unless @site.comments_enabled}}
 {{#if access}}
     <section class="footer-cta outer">
-            <div class="inner">
-            <h2>If you enjoyed this post or it helped you out 😄</h2> 
-            <div>Consider supporting me via Ko-fi 🎉</div>
-            <span>
-                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                <script type='text/javascript'>
-                    kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'W7W67RPS1');
-                    kofiwidget2.draw();
-                </script>
-            </span>
-            <br />
-            <div>Or sign up for more like this 📧</div>
+        <div class="inner">
+            {{> "footer-cta-support"}}
             {{#if @custom.email_signup_text}}<h2 class="footer-cta-title">{{@custom.email_signup_text}}</h2>{{/if}}
             <a class="footer-cta-button" href="#/portal" data-portal>
                 <div class="footer-cta-input">{{t "Enter your email"}}</div>

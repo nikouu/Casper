@@ -1884,10 +1884,7 @@ html.dark-mode .gh-button-share:hover {
 
 .footer-cta {
     position: relative;
-    padding: 5vmin 2vmin 6vmin; /* Niko's Custom change */
-    color: #fff; /* Niko's Custom change */
-    text-align: center; /* Niko's Custom change */
-    background: var(--color-darkgrey); /* Niko's Custom change */
+    text-align: center;
 }
 
 .footer-cta-title {
@@ -1898,18 +1895,6 @@ html.dark-mode .gh-button-share:hover {
 
 .has-serif-title:not([class*=" gh-font-heading"]):not([class^="gh-font-heading"]) .footer-cta-title {
     font-family: var(--gh-font-heading, var(--font-serif));
-}
-
-.footer-cta div {
-    padding-top: 10px;
-    padding-bottom: 15px;
-    font-size: 2rem;
-}
-
-@media (max-width: 600px) {
-    .footer-cta h2 {
-        font-size: 2.65rem;
-    }
 }
 
 .footer-cta-button {
@@ -1948,30 +1933,17 @@ html.dark-mode .gh-button-share:hover {
 /* ---------------------------------------------------------- */
 
 .read-more-wrap {
-    width: 100%; /* Niko's Custom change */
-    padding: 4vmin; /* Niko's Custom change */
-    margin: 0 auto -40px; /* Niko's Custom change */
-    border-bottom: 1px solid hsla(0,0%,100%,.1); /* Niko's Custom change */
-    background: #0a0b0c; /* Niko's Custom change */
+    margin-top: 2.4vmin;
 }
 
 .footer-cta + .read-more-wrap {
-    /*margin-top: max(12vmin, 72px); */ /* Niko's Custom change */
+    margin-top: max(12vmin, 72px);
 }
 
 .read-more {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 4vmin;
-}
-
-.read-more .post-card-title {
-    color: #fff;
-    opacity: .8;
-}
-
-.read-more .post-card-excerpt {
-    color: hsla(0,0%,100%,.6);
 }
 
 .read-more .post-card-tags {
@@ -3485,4 +3457,54 @@ flex gap then pushes the footer menu out of line */
 .post-card-excerpt {
     display: block;
     color: #60757e;
+}
+
+/* 25. End of post
+/* ---------------------------------------------------------- */
+
+.footer-cta {
+    padding-top: 5vmin;
+    padding-bottom: 6vmin;
+    color: #fff;
+    background: var(--color-darkgrey);
+}
+
+.footer-cta-text,
+.footer-cta-kofi {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.footer-cta-text {
+    font-size: 2rem;
+}
+
+@media (max-width: 600px) {
+    .footer-cta h2 {
+        font-size: 2.65rem;
+    }
+}
+
+/* The negative margin cancels the footer's 40px top margin, so the dark
+read-more band touches the footer */
+.read-more-wrap {
+    margin-top: 0;
+    margin-bottom: -40px;
+    padding-top: 4vmin;
+    padding-bottom: 4vmin;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+    background: #0a0b0c;
+}
+
+.footer-cta + .read-more-wrap {
+    margin-top: 0;
+}
+
+.read-more .post-card-title {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.read-more .post-card-excerpt {
+    color: hsla(0, 0%, 100%, 0.6);
 }
