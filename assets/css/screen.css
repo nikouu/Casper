@@ -3497,6 +3497,18 @@ table * {
     }
 }
 
+/* The "Email signup text" setting shows as upstream's large title. Make it
+look like the text lines above it, on phones too */
+.footer-cta .footer-cta-title {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
 /* The negative margin cancels the footer's 40px top margin, so the dark
 read-more band touches the footer */
 .read-more-wrap {
