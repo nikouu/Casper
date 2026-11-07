@@ -3307,11 +3307,20 @@ video {
 /* 18. Tables
 /* ---------------------------------------------------------- */
 
-/* Wrap cell text and use the post font: tables fit the column and only
-scroll sideways when their columns cannot shrink */
+/* Wrap cell text between words only, so a table scrolls instead of splitting
+words. fit-content shrinks the box to the table, so upstream's scroll
+shadows only show when a table actually scrolls */
 .gh-content table:not(.gist table) {
+    width: fit-content;
     font-family: inherit;
     white-space: normal;
+    word-break: normal;
+}
+
+/* Tables with six or more columns use the wide column, like wide images */
+.gh-content > table:not(.gist table):has(tr > :nth-child(6)) {
+    grid-column: wide-start / wide-end;
+    justify-self: center;
 }
 
 table * {
