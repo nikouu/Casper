@@ -34,7 +34,6 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.css";
-@import "basictable.css"; 
 @import "prism.css";
 
 :root {
@@ -1731,9 +1730,6 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 /* Tables */
-
-/*
-.gh-content table {
 .gh-content table:not(.gist table) {
     display: inline-block;
     overflow-x: auto;
@@ -1781,7 +1777,6 @@ iframe.instagram-media + script + :not([id]) {
     border: color-mod(var(--color-wash) lightness(92%) saturation(39%)) 1px solid;
 }
 
-*/
 
 /* 6.1. Post Byline
 /* ---------------------------------------------------------- */
@@ -3288,47 +3283,6 @@ video {
     width:100%;
 }
 
-/* Tables */
-.article table {  
-    overflow-x: auto;
-    margin: 0.5em 0 1em;
-    max-width: 100%;
-    width: auto;
-    border-spacing: 0;
-    border-collapse: collapse;
-    vertical-align: top;
-}
-
-.article table {
-    -webkit-overflow-scrolling: touch;
-}
-
-.article table thead {
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    white-space: nowrap;
-}
-
-.article table th {
-    color: var(--color-darkgrey);
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    text-align: left;
-    text-transform: uppercase;
-    background-color: #f4f8fb;
-
-    position: sticky;
-    top: 0;
-    z-index: 200;
-}
-
-.article table th,
-.article table td {
-    padding: 6px 12px;
-    border: #e2ecf3 1px solid;
-}
-
 /* 17. Ads
 /* ---------------------------------------------------------- */
 
@@ -3352,6 +3306,13 @@ video {
 
 /* 18. Tables
 /* ---------------------------------------------------------- */
+
+/* Wrap cell text and use the post font: tables fit the column and only
+scroll sideways when their columns cannot shrink */
+.gh-content table:not(.gist table) {
+    font-family: inherit;
+    white-space: normal;
+}
 
 table * {
     vertical-align: middle;
@@ -3496,9 +3457,12 @@ flex gap then pushes the footer menu out of line */
     margin-bottom: 0;
 }
 
-/* Prism's "margin: .5em 0" outranks the block gap, so give code blocks the card gap */
+/* Code blocks and tables get the card gap. For code blocks, Prism's
+"margin: .5em 0" would otherwise outrank the block gap */
 .gh-content > * + pre,
-.gh-content > pre + * {
+.gh-content > * + table,
+.gh-content > pre + *,
+.gh-content > table + * {
     margin-top: 32px;
 }
 

@@ -1,7 +1,4 @@
 (function () {
-    // Basictable - Makes tables more responsible
-    new basictable("article table", {forceResponsive: false});
-
     // ┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴
     fetch("https://www.nikouusitalo.com/assets/other/ConsoleMessage.svg")
     .then(response => response.text())
