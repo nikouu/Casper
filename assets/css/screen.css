@@ -1461,9 +1461,9 @@ is the very first element in the post content */
 .gh-content > p {
     font-family: var(--font-sans-serif);
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.6em;
-    margin-top: 1.1em;
+    margin-top: 1.2em;
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
@@ -1472,7 +1472,7 @@ is the very first element in the post content */
 .gh-content .kg-toggle-card .kg-toggle-content > p {
     /*font-family: var(--font-serif);*/
     font-weight: 400;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     line-height: 1.6em;
 }
 
@@ -1541,7 +1541,7 @@ is the very first element in the post content */
     .gh-content .kg-toggle-card .kg-toggle-content > ol,
     .gh-content .kg-toggle-card .kg-toggle-content > ul,
     .gh-content .kg-toggle-card .kg-toggle-content > p {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .gh-content .kg-product-card .kg-product-card-description > p,
