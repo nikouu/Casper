@@ -2145,8 +2145,9 @@ html.dark-mode .gh-button-share:hover {
 
 .site-footer {
     position: relative;
-    margin: 40px 0 0 0; /* Niko's Custom change */
-    padding: 20px 4vmin 20px; /* Niko's Custom change */
+    margin: max(12vmin, 64px) 0 0 0;
+    padding-top: 48px;
+    padding-bottom: 140px;
     color: #fff;
     background: color-mod(var(--color-darkgrey) l(-5%));
 }
@@ -3326,12 +3327,6 @@ table * {
 .gh-head-menu .nav-github a::before {content: "\f09b"}
 .gh-head-menu .nav-linkedin a::before {content: "\f08c"}
 
-/* Ghost renders this block even with no social accounts set, and its
-flex gap then pushes the footer menu out of line */
-.site-footer-social-links:not(:has(a)) {
-    display: none;
-}
-
 /* 21. Header and menu
 /* ---------------------------------------------------------- */
 
@@ -3507,4 +3502,21 @@ read-more band touches the footer */
 
 .read-more .post-card-excerpt {
     color: hsla(0, 0%, 100%, 0.6);
+}
+
+/* 26. Footer
+/* ---------------------------------------------------------- */
+
+/* The read-more band's -40px bottom margin (section 25) cancels this top
+margin. Change the two values together */
+.site-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Ghost renders this block even with no social accounts set, and its
+flex gap then pushes the footer menu out of line */
+.site-footer-social-links:not(:has(a)) {
+    display: none;
 }
