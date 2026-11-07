@@ -1428,7 +1428,7 @@ headings, text, images and lists. We deal with cards lower down. */
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
 .gh-content > [id]:not(:first-child) {
-    margin: 1em 0 0;
+    margin: 1.6em 0 0;
 }
 
 /* Add a small margin between a heading and anything after it */
@@ -1463,7 +1463,7 @@ is the very first element in the post content */
     font-weight: 400;
     font-size: 2rem;
     line-height: 1.6em;
-    margin-top: 2vmin;
+    margin-top: 1.1em;
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
@@ -1567,11 +1567,11 @@ make sure they look good, and are given a bit of extra spacing. */
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
 .gh-content :not(.kg-card):not([id]) + .kg-card {
-    margin-top: 2vmin;
+    margin-top: 32px;
     margin-bottom: 0;
 }
 .gh-content .kg-card + :not(.kg-card) {
-    margin-top: 2vmin;
+    margin-top: 32px;
     margin-bottom: 0;
 }
 
