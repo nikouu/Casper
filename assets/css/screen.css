@@ -3205,6 +3205,7 @@ so they must stay at the end of the file.
 24. End of post
 25. Footer
 26. Code blocks
+27. Support buttons
 
 */
 
@@ -3490,7 +3491,7 @@ from H3 to H2 as on desktop */
 }
 
 .footer-cta-text,
-.footer-cta-kofi {
+.footer-cta .support-buttons {
     padding-top: 10px;
     padding-bottom: 15px;
 }
@@ -3572,4 +3573,42 @@ code block is the same 32px as above it */
     background: #fff;
     border-radius: 3px;
     box-shadow: none;
+}
+
+/* 27. Support buttons
+/* ---------------------------------------------------------- */
+
+/* Ko-fi's script writes its button where the script runs, so both buttons
+sit in this row */
+.support-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-cta .support-buttons {
+    justify-content: center;
+}
+
+/* The same shape as the Ko-fi button. This selector is as strong as
+".gh-content a:not(.kofi-button)", which would otherwise underline it on
+the About page */
+.support-buttons a.support-tip-button {
+    display: inline-block;
+    min-width: 150px;
+    padding: 2px 12px;
+    color: var(--color-darkgrey);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: center;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: inset 0 0 0 1px var(--color-border), 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.support-buttons a.support-tip-button:hover {
+    opacity: 0.85;
 }
