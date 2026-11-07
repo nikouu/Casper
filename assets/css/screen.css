@@ -1428,7 +1428,7 @@ is the very first element in the post content */
 }
 
 /* Now the content typography styles */
-.gh-content a:not(.token):not(.kofi-button) {
+.gh-content a:not(.kofi-button) {
     color: var(--ghost-accent-color);
     text-decoration: underline;
     word-break: break-word;
@@ -1521,6 +1521,36 @@ is the very first element in the post content */
     background: var(--ghost-accent-color);
 }
 
+.gh-content :not(pre) > code {
+    vertical-align: middle;
+    padding: 0.15em 0.4em 0.15em;
+    border: #e1eaef 1px solid;
+    font-weight: 400 !important;
+    font-size: 0.9em;
+    line-height: 1em;
+    color: #15171A;
+    background: #f0f6f9;
+    border-radius: 0.25em;
+}
+
+.gh-content pre {
+    overflow: auto;
+    padding: 16px 20px;
+    color: var(--color-wash);
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    background: var(--color-darkgrey);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
+}
+
+.gh-content ol ol li {
+    list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+    list-style-type: lower-roman;
+}
 
 @media (max-width: 650px) {
     .gh-content > blockquote:not([class]),
@@ -3325,17 +3355,6 @@ video {
 
 table * {
     vertical-align: middle;
-}
-
-/* 19. Code
-/* ---------------------------------------------------------- */
-
-code {
-    font-family: monospace,monospace;
-    font-size: 1em;
-    background-color: #e3e6e8;
-    border-radius: 3px;
-    padding: 2px 4px;
 }
 
 /* 20. Socials
