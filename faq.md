@@ -1,27 +1,28 @@
 # FAQ
 
 ## How do I run a script for every page?
-The ready in default.hbs
+Add it to `assets/js/custom.js`, then run `pnpm build`.
 
 ## How do I add a new script?
-Put new script under assets\js\lib then run `gulp build`
+Put the script in `assets/js/lib/`, then run `pnpm build`.
 
-## How do I add a new css file?
-1. Put new .css under assets\css
-2. Add an import in assets\css\screen.css
-3. Run `gulp build`
+## How do I add a new CSS file?
+1. Put the file in `assets/css/`.
+2. Add an `@import` line at the top of `assets/css/screen.css`, next to the other imports.
+3. Run `pnpm build`.
 
-## How do I complile the scripts/styles?
-Run `gulp build`
+## How do I compile the scripts and styles?
+Run `pnpm install` once, then `pnpm build`. Commit the files in `assets/built/` too.
 
-## How do I add a new single style to the existing .css file?
-Modify assets\css\screen.css, remember to build after
+## How do I add a new single style?
+Add it to the custom sections at the end of `assets/css/screen.css`. Use the same selector as the upstream rule that you change. Do not edit upstream rules in place, because that causes merge conflicts. Run `pnpm build`.
 
 ## How do I modify routes?
-1. Modify routes.yaml
-2. Upload routes.yaml to the admin panel > settings > labs > routes
+1. Modify `routes.yaml`.
+2. Upload it in Ghost Admin: Settings → Labs → Routes.
 
-## How to update from the main repo?
-1. Create a merge resolution branch
-2. Merge origin/main into it
-3. PR into own main
+## How do I update from the main repo?
+1. Run `git fetch upstream`.
+2. Run `git merge --no-commit upstream/main`.
+3. Fix the conflicts, then run `pnpm build` and `pnpm exec gscan .`.
+4. Commit and push.
