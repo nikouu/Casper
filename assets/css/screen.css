@@ -3547,6 +3547,6 @@ colors when the theme changes. This rule also removes Prism's bottom margin,
 so the gap below a code block is the same 32px as above it */
 .gh-content pre {
     margin-bottom: 0;
-    color: #5e6687;
-    background: #f5f7ff;
+    color: #393a34;
+    background: #fff;
 }
